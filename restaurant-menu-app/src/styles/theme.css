@@ -1,0 +1,60 @@
+/* Theme variables for Crumbly Cheesecakes */
+:root {
+  --color-hero-bg: #8b4a22; /* warm brown from screenshot */
+  --color-surface: #ffffff;
+  --color-text: #2c1810; /* deep brown text */
+  --color-primary: #8b4513; /* saddle brown accents */
+  --color-primary-contrast: #ffffff;
+
+  --radius-md: 12px;
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Dark scheme adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.3);
+  }
+}
+:root {
+  --background-color: #f8f5f0;
+  --surface-color: #ffffff;
+  --text-color: #2c1810;
+  --primary-action-color: #8b4513;
+  --secondary-action-color: #d4a574;
+  --font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.navbar {
+  background-color: var(--surface-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: var(--primary-action-color);
+}
+
+.hero-section {
+  background-color: var(--primary-action-color);
+  color: var(--surface-color);
+}
+
+.order-card {
+  background-color: var(--surface-color);
+  border: 2px solid var(--primary-action-color);
+}
+
+.footer {
+  background-color: var(--primary-action-color);
+  color: var(--surface-color);
+}
+
+.decorative-line {
+  background: linear-gradient(90deg, transparent, var(--primary-action-color), transparent);
+}
