@@ -1,0 +1,393 @@
+/* Base layout and typography to match screenshot */
+html, body { height: 100%; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--color-text);
+  background: var(--color-surface);
+  font-size: 18px; /* slightly larger base */
+}
+
+/* Headings use Georgia explicitly */
+h1, h2, h3, h4, h5, h6, p, a, small, span, button {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Navigation */
+#nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255,255,255,0.75);
+  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+#nav .nav-link { color: var(--color-text); text-decoration: none; }
+#nav .nav-link:hover { opacity: 0.7; }
+/* Center brand and links */
+#nav > .nav-container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+#nav .nav-left { display: flex; align-items: center; gap: 12px; }
+#nav .nav-left .nav-logo { margin-right: 8px; }
+#nav .nav-left #nav-restaurant-name { color: var(--color-text) !important; position: relative; z-index: 1; }
+#nav #nav-restaurant-name { font-size: 1.85rem; font-weight: 700; color: var(--color-text) !important; display: inline-block !important; line-height: 1; white-space: nowrap; opacity: 1 !important; visibility: visible !important; }
+#nav .nav-left { gap: 16px; }
+#nav .nav-right { display: flex; align-items: center; gap: 20px; }
+#nav .links { display: flex; gap: 24px; }
+#nav .nav-logo { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: #fff; padding: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+/* Hero */
+#home {
+  min-height: 60vh; /* slightly shorter */
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 20px; /* tighter hero padding */
+  background: var(--color-hero-bg);
+  color: var(--color-primary-contrast);
+}
+#home h1 {
+  font-size: clamp(3rem, 7vw, 5.25rem); /* bigger hero heading */
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 0.5rem; /* reduce bottom space */
+}
+#home p { font-size: clamp(1.1rem, 2.2vw, 1.35rem); opacity: 0.95; margin-bottom: 1rem; }
+#home #hero-button {
+  display: inline-block;
+  padding: 12px 18px; /* tighter button */
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-hero-bg);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+#home #hero-button:hover { transform: scale(1.03); transition: transform 150ms ease; }
+
+/* Sections */
+section { padding: 36px 20px; } /* reduce vertical spacing */
+.decorative-line { height: 1px; background: linear-gradient(90deg, transparent, var(--color-primary), transparent); }
+
+/* Menu */
+#menu { max-width: 860px; margin: 0 auto; text-align: center; }
+#menu h2 { color: var(--color-text); font-size: clamp(2.25rem, 4.2vw, 3rem); }
+#menu #tagline { color: var(--color-text); opacity: 0.85; font-size: 1.25rem; }
+.menu-item { padding: 12px; border-radius: 8px; background: var(--color-surface); }
+.menu-item:hover { transform: translateX(6px); transition: transform 150ms ease; }
+.menu-item span { color: var(--color-primary); }
+
+/* Order cards */
+.order-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 20px; /* tighter card padding */
+  text-align: center;
+}
+.instagram-button, .phone-button, #whatsapp-button {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.instagram-button:hover, .phone-button:hover, #whatsapp-button:hover { transform: scale(1.03); transition: transform 150ms ease; }
+
+/* Footer */
+#footer { background: var(--color-primary); color: var(--color-primary-contrast); }
+
+/* Contact grid layout centered */
+#contact .grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 920px; margin: 0 auto; }
+@media (min-width: 768px) {
+  #contact .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+
+/* Minimal utility mappings to respect existing classes */
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-4xl { max-width: 56rem; }
+body {
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  background-color: #f8f5f0;
+  color: #2c1810;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  margin: 0 15px;
+  font-size: 18px;
+  transition: opacity 0.3s;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero-heading {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.menu-title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.menu-item {
+  transition: transform 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateX(8px);
+}
+
+.decorative-line {
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  height: 1px;
+  margin: 20px 0;
+}
+
+.order-card {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.order-card:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ==================== MOBILE RESPONSIVE STYLES ==================== */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  #nav {
+    padding: 12px 16px;
+  }
+  
+  #nav .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  #nav .nav-left img {
+    transform: scale(2) !important;
+    height: 40px !important;
+  }
+  
+  #nav .links {
+    gap: 16px;
+  }
+  
+  #nav .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Hero */
+@media (max-width: 768px) {
+  #home {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+  
+  #home img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+  
+  #home h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  
+  #home p {
+    font-size: 1rem !important;
+  }
+  
+  #home #hero-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Welcome Section */
+@media (max-width: 768px) {
+  section.py-20 {
+    padding: 40px 20px;
+  }
+  
+  #welcome-heading {
+    font-size: 1.75rem !important;
+  }
+  
+  #welcome-text {
+    font-size: 1rem !important;
+    line-height: 1.6;
+  }
+}
+
+/* Mobile Menu Grid */
+@media (max-width: 768px) {
+  #menu {
+    padding: 40px 16px;
+  }
+  
+  #menu h2 {
+    font-size: 2rem !important;
+    margin-bottom: 24px;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .menu-card img {
+    height: 220px !important;
+  }
+  
+  .menu-card h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  .menu-card span {
+    font-size: 1.1rem !important;
+  }
+  
+  .menu-card p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Mobile Order Section */
+@media (max-width: 768px) {
+  #contact {
+    padding: 40px 16px;
+  }
+  
+  #contact-heading {
+    font-size: 2rem !important;
+  }
+  
+  #contact .text-center p {
+    font-size: 1rem !important;
+    padding: 0 10px;
+  }
+  
+  #contact .grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  
+  .order-card {
+    padding: 24px 20px;
+  }
+  
+  .order-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .order-card p {
+    font-size: 1rem;
+  }
+  
+  .instagram-button,
+  .phone-button,
+  #whatsapp-button {
+    padding: 14px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+/* Mobile Order Notes */
+@media (max-width: 768px) {
+  #contact > div > div:last-child {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  
+  #contact > div > div:last-child > div {
+    justify-content: center;
+  }
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+  #footer {
+    padding: 32px 20px;
+  }
+  
+  #footer-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  #home h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  #home img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  #welcome-heading {
+    font-size: 1.5rem !important;
+  }
+  
+  #menu h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  #contact-heading {
+    font-size: 1.75rem !important;
+  }
+  
+  .menu-card img {
+    height: 180px !important;
+  }
+}
